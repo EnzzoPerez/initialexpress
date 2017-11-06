@@ -1,0 +1,16 @@
+extends index
+
+block content
+    p bienvenido a #{title}
+    each persona in result
+        p Nombre: #{persona.name} "----->>>" Apellido: #{persona.apellido}
+        -console.log('esto es:', persona.name)
+    form(action="/nombres" method="POST")
+        label  Nombre:
+        input(type='text' name='name')
+        label apellido:
+        input(type='text' name='apellido')
+        button(type='submit' value='Aceptar') Aceptar
+    
+    div mensaje a reemplazar
+    button(id='put') Modificar
